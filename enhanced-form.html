@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced HTML5 Content & Forms</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        header, section, form {
+            background: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        ul, ol {
+            margin-bottom: 15px;
+        }
+        .media-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .form-section fieldset {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .form-section legend {
+            font-weight: bold;
+            color: #555;
+            padding: 0 10px;
+        }
+        .form-control {
+            margin-bottom: 15px;
+        }
+        .form-control label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        .form-control input, .form-control select, .form-control textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .form-control input:invalid, .form-control select:invalid {
+            border-color: red;
+        }
+        .form-control input:valid, .form-control select:valid {
+            border-color: green;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Enhanced Content & Form Mastery</h1>
+        <p>This page demonstrates the use of HTML5 elements for structured content and advanced form creation with native validation.</p>
+    </header>
+
+    <main>
+        <section id="content-showcase">
+            <h2>Content Showcase</h2>
+
+            <h3>A List of Favorite Cities</h3>
+            <p>Here are some of the world's most beautiful cities, organized for clarity.</p>
+            <ul>
+                <li><strong>Paris</strong>: Known as the "City of Love" and for its iconic landmarks like the Eiffel Tower.</li>
+                <li><strong>Tokyo</strong>: A bustling metropolis blending traditional temples with futuristic skyscrapers.</li>
+                <li><strong>Rome</strong>: An ancient city rich with history, art, and architectural wonders.</li>
+                <li><strong>Kyoto</strong>: Famous for its classical Buddhist temples, gardens, imperial palaces, and traditional wooden houses.</li>
+            </ul>
+
+            <hr>
+
+            <h3>Media Gallery</h3>
+            <div class="media-container">
+                <div>
+                    <h4>An Informative Image</h4>
+                    <figure>
+                        <img src="https://via.placeholder.com/600x300.png?text=Placeholder+Image" alt="A generic placeholder image" width="600" height="300">
+                        <figcaption>A placeholder image to demonstrate the use of the <code>&lt;figure&gt;</code> and <code>&lt;figcaption&gt;</code> elements.</figcaption>
+                    </figure>
+                </div>
+
+                <div>
+                    <h4>Sample Audio Clip</h4>
+                    <audio controls>
+                        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                
+                <div>
+                    <h4>An Embedded Video</h4>
+                    <video width="640" height="360" controls>
+                        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <hr>
+
+            <h3>Course Enrollment Data</h3>
+            <p>The following table provides a summary of course enrollments for the current semester.</p>
+            <table>
+                <caption>Semester 2025 Course Enrollments</caption>
+                <thead>
+                    <tr>
+                        <th>Course Code</th>
+                        <th>Course Title</th>
+                        <th>Total Students</th>
+                        <th>Availability</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>CS101</td>
+                        <td>Intro to Programming</td>
+                        <td>120</td>
+                        <td>Full</td>
+                    </tr>
+                    <tr>
+                        <td>WEB202</td>
+                        <td>Advanced HTML/CSS</td>
+                        <td>85</td>
+                        <td>Limited</td>
+                    </tr>
+                    <tr>
+                        <td>DES303</td>
+                        <td>UI/UX Design Principles</td>
+                        <td>60</td>
+                        <td>Available</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="html5-form-section" class="form-section">
+            <h2>User Registration Form</h2>
+            <p>Please fill out this form. All fields marked with an asterisk (<span style="color: red;">*</span>) are required.</p>
+            <form action="#" method="post" autocomplete="on">
+                
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    <div class="form-control">
+                        <label for="fullName">Full Name <span style="color: red;">*</span></label>
+                        <input type="text" id="fullName" name="fullName" placeholder="e.g., Jane Doe" required minlength="3">
+                    </div>
+                    
+                    <div class="form-control">
+                        <label for="email">Email <span style="color: red;">*</span></label>
+                        <input type="email" id="email" name="email" placeholder="e.g., jane.doe@example.com" required>
+                    </div>
+
+                    <div class="form-control">
+                        <label for="password">Password <span style="color: red;">*</span></label>
+                        <input type="password" id="password" name="password" placeholder="Min. 8 characters" required minlength="8" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$" title="Must contain at least one number, one uppercase and one lowercase letter, and at least 8 or more characters">
+                    </div>
+                    
+                    <div class="form-control">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="e.g., 123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Additional Details</legend>
+                    <div class="form-control">
+                        <label for="birthdate">Date of Birth</label>
+                        <input type="date" id="birthdate" name="birthdate">
+                    </div>
+                    
+                    <div class="form-control">
+                        <label for="favColor">Favorite Color</label>
+                        <input type="color" id="favColor" name="favColor">
+                    </div>
+
+                    <div class="form-control">
+                        <label for="quantity">Quantity of items <span style="color: red;">*</span></label>
+                        <input type="number" id="quantity" name="quantity" min="1" max="100" value="1" required>
+                    </div>
+
+                    <div class="form-control">
+                        <label for="profileUrl">Personal Website</label>
+                        <input type="url" id="profileUrl" name="profileUrl" placeholder="https://example.com" autocomplete="off">
+                    </div>
+                    
+                    <div class="form-control">
+                        <label for="newsletter">Subscribe to Newsletter?</label>
+                        <input type="checkbox" id="newsletter" name="newsletter" checked>
+                    </div>
+                    
+                    <div class="form-control">
+                        <label for="comments">Comments</label>
+                        <textarea id="comments" name="comments" rows="4" placeholder="Optional comments..." readonly></textarea>
+                    </div>
+                </fieldset>
+
+                <div class="form-control">
+                    <button type="submit">Submit Registration</button>
+                    <button type="reset">Reset Form</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+</body>
+</html>
